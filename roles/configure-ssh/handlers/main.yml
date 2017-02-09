@@ -1,0 +1,7 @@
+---
+# handlers file for configure-ssh
+- name: Restart sshd
+  service:
+    name: 'ssh'
+    state: 'reloaded'
+  become: true

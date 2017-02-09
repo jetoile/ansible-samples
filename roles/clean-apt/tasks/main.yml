@@ -1,0 +1,8 @@
+---
+# tasks file for clean-apt
+- name: Delete file://cdrom
+  apt_repository:
+    repo: deb cdrom:[Ubuntu-Server 14.04.1 LTS _Trusty Tahr_ - Release amd64 (20140722.3)]/ trusty main restricted
+    state: absent
+  become: yes
+

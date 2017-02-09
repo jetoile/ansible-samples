@@ -1,0 +1,15 @@
+- name: setup server with ssh and docker
+  hosts: servers
+  vars_prompt:
+   - name: "user_password"    
+     prompt: "Enter a password for the root user" 
+     private: yes    
+     encrypt: "md5_crypt" #need to have python-passlib installed in local machine before we can use it    
+     confirm: yes    
+     salt_size: 4
+  roles:
+    - install-base
+    - configure-hostname
+    - configure-ssh
+    - install-docker
+      

@@ -1,0 +1,5 @@
+[servers]
+ubuntu1 ansible_port=22 ansible_host=192.168.12.138
+ubuntu2 ansible_port=22 ansible_host=192.168.12.139
+ubuntu3 ansible_port=22 ansible_host=192.168.12.140
+

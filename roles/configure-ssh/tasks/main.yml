@@ -1,0 +1,18 @@
+---
+# tasks file for configure-ssh
+- name: Configure sshd
+  copy: src=sshd_config dest=/etc/ssh/sshd_config
+  become: yes
+  notify: Restart sshd
+- name: add root user
+  user:
+    name: root
+    password: '{{ user_password }}'
+  become: yes
+- name: Set authorized key took from file
+  authorized_key:
+    user: '{{ ansible_user_id }}'
+    state: present
+    key: "{{ lookup('file', ansible_user_dir + '/.ssh/id_rsa.pub') }}"
+
+

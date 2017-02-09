@@ -1,0 +1,5 @@
+- name: clean docker hosts
+  hosts: servers
+  gather_facts: no
+  roles:
+  - clean-docker-host
