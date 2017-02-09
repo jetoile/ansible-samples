@@ -25,6 +25,10 @@
   apt: 'name={{ docker_package_name }}={{ docker_version }} update_cache=yes cache_valid_time=3600 force=yes'
   notify: Restart docker
   become: yes
+- name: configure docker
+  copy: src=daemon.json dest=/etc/docker/daemon.json
+  notify: Restart docker
+  become: yes
 - name: Create a docker group
   group:
     name: docker
