@@ -8,8 +8,8 @@
      confirm: yes    
      salt_size: 4
   roles:
+    - configure-ssh
     - install-base
     - configure-hostname
-    - configure-ssh
     - install-docker
       
